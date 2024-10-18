@@ -2,6 +2,9 @@
 
 Interactive tabs block for the WordPress block editor.
 
+https://github.com/user-attachments/assets/ec960a7f-0b5c-44c4-b18f-04d43ebcf405
+
+
 # Interactivity API
 
 Resources for more info about the Interactivity API:
