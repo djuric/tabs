@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "tabs/tabs",
+	"version": "0.1.0",
+	"title": "Tabs",
+	"category": "widgets",
+	"icon": "media-interactive",
+	"description": "Tabs using Interactivity API",
+	"allowedBlocks": ["tabs/tab"],
+	"example": {},
+	"supports": {
+		"interactivity": true
+	},
+	"attributes": {
+		"activeTabId": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"providesContext": {
+		"tabs/activeTabId": "activeTabId"
+	},
+	"textdomain": "tabs",
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScriptModule": "file:./view.js"
+}

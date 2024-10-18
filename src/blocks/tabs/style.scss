@@ -1,0 +1,36 @@
+$tabs-bg-color: #fff;
+$tabs-border: #e0e0e0;
+
+$active-tab-color: #212121;
+$inactive-tab-color: #808080;
+
+$add-tab-bg-color: #f5fafc;
+
+.wp-block-tabs-tabs {
+    background: $tabs-bg-color;
+
+    &__navigation {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem;
+        padding-bottom: 0;
+        border-bottom: 1px solid $tabs-border;
+    }
+
+    &__navigation-item {
+        padding: .4rem 1rem;
+        color: $inactive-tab-color;
+        cursor: pointer;
+        font-weight: 600;
+
+        &--add button.is-tertiary {
+            background-color: $add-tab-bg-color;
+        }
+    }
+
+    &__navigation-item.active {
+        color: $active-tab-color;
+        font-weight: 600;
+        border-bottom: 3px solid $active-tab-color;
+    }
+}
