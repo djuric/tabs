@@ -23,6 +23,13 @@ foreach ( $block->parsed_block['innerBlocks'] as $innerblock ) {
 	];
 }
 
+$tab_content = array_filter(
+	$block->parsed_block['innerBlocks'],
+	function ( $innerblock ) use ( $active_tab_id ) {
+		return $innerblock['attrs']['id'] === $active_tab_id;
+	}
+);
+
 ?>
 
 <div
@@ -31,8 +38,7 @@ foreach ( $block->parsed_block['innerBlocks'] as $innerblock ) {
 	<?php
 	echo wp_interactivity_data_wp_context(
 		[
-			'tabs'        => $tabs,
-			'activeTabId' => $active_tab_id,
+			'tabs' => $tabs,
 		]
 	);
 	?>
@@ -45,7 +51,7 @@ foreach ( $block->parsed_block['innerBlocks'] as $innerblock ) {
 	</div>
 
 	<div class="wp-block-tabs-tabs__content">
-		<?php echo $content; ?>
+		<?php echo render_block( array_pop( $tab_content ) ); ?>
 	</div>
 
 </div>
