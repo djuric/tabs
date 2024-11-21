@@ -45,9 +45,9 @@ $tab_content = array_filter(
 	data-wp-router-region="<?php echo wp_unique_id( 'tabs-' ); ?>"
 >
 	<div class="wp-block-tabs-tabs__navigation">
-		<template data-wp-each--tab="context.tabs" data-wp-each-key="context.tab.id">
-			<div class="wp-block-tabs-tabs__navigation-item" data-wp-on--click="actions.open" data-wp-text="context.tab.label" data-wp-class--active="context.tab.isActive"></div>
-		</template>
+		<?php foreach ( $tabs as $tab ) : ?>
+			<div data-wp-on--click="actions.open" class="<?php echo $tab['isActive'] ? 'wp-block-tabs-tabs__navigation-item active' : 'wp-block-tabs-tabs__navigation-item'; ?>" data-id="<?php echo $tab['id']; ?>"><?php echo $tab['label']; ?></div>
+		<?php endforeach; ?>
 	</div>
 
 	<div class="wp-block-tabs-tabs__content">
