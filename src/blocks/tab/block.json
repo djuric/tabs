@@ -26,6 +26,5 @@
 	"textdomain": "tabs",
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
-	"render": "file:./render.php",
-	"viewScriptModule": "file:./view.js"
+	"render": "file:./render.php"
 }
